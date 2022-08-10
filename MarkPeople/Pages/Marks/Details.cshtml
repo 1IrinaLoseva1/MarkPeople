@@ -2,41 +2,41 @@
 @model MarkPeople.Pages.Marks.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Подробно";
 }
 
-<h1>Details</h1>
+    <h1>Подробно</h1>
 
 <div>
-    <h4>MarkQuality</h4>
+    <h4>Оценка качеств</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MarkQuality.People)
+            Человек
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MarkQuality.People.PeopleName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MarkQuality.Beauty)
+            Красота
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MarkQuality.Beauty)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MarkQuality.Power)
+            Сила
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MarkQuality.Power)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MarkQuality.Mind)
+            Ум
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MarkQuality.Mind)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.MarkQuality.IsLikePizzaPineApple)
+            Любит пиццу с ананасами
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MarkQuality.IsLikePizzaPineApple)
@@ -44,6 +44,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.MarkQuality.MarkQualityId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.MarkQuality.MarkQualityId">Редактировать</a> |
+    <a asp-page="./Index">Назад к списку</a>
 </div>

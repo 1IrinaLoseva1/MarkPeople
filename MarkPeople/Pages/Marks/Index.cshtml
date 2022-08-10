@@ -2,31 +2,31 @@
 @model MarkPeople.Pages.Marks.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Список качеств людей";
 }
 
-<h1>Index</h1>
+    <h1>Список качеств людей</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Создать</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.MarkQuality[0].People)
+                Человек
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MarkQuality[0].Beauty)
+                Красота
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MarkQuality[0].Power)
+                Сила
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MarkQuality[0].Mind)
+                Ум
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MarkQuality[0].IsLikePizzaPineApple)
+                Любит пиццу с ананами
             </th>
             <th></th>
         </tr>
@@ -50,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.IsLikePizzaPineApple)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.MarkQualityId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.MarkQualityId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.MarkQualityId">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.MarkQualityId">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.MarkQualityId">Подробно</a> |
+                <a asp-page="./Delete" asp-route-id="@item.MarkQualityId">Удалить</a>
             </td>
         </tr>
 }

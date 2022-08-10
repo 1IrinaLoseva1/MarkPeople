@@ -2,50 +2,51 @@
 @model MarkPeople.Pages.Marks.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Создать";
 }
 
-<h1>Create</h1>
+    <h1>Создать</h1>
 
-<h4>MarkQuality</h4>
+<h4>Оценка качеств</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="MarkQuality.PeopleId" class="control-label"></label>
+                <label asp-for="MarkQuality.PeopleId" class="control-label">Человек</label>
                 <select asp-for="MarkQuality.PeopleId" class ="form-control" asp-items="ViewBag.PeopleId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="MarkQuality.Beauty" class="control-label"></label>
+                <label asp-for="MarkQuality.Beauty" class="control-label">Красота</label>
                 <input asp-for="MarkQuality.Beauty" class="form-control" />
                 <span asp-validation-for="MarkQuality.Beauty" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MarkQuality.Power" class="control-label"></label>
+                <label asp-for="MarkQuality.Power" class="control-label">Сила</label>
                 <input asp-for="MarkQuality.Power" class="form-control" />
                 <span asp-validation-for="MarkQuality.Power" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MarkQuality.Mind" class="control-label"></label>
+                <label asp-for="MarkQuality.Mind" class="control-label">Ум</label>
                 <input asp-for="MarkQuality.Mind" class="form-control" />
                 <span asp-validation-for="MarkQuality.Mind" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="MarkQuality.IsLikePizzaPineApple" /> @Html.DisplayNameFor(model => model.MarkQuality.IsLikePizzaPineApple)
+                    <input class="form-check-input" asp-for="MarkQuality.IsLikePizzaPineApple" />Любит пиццу с ананасами
+                    @*@Html.DisplayNameFor(model => model.MarkQuality.IsLikePizzaPineApple)*@
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Назад к списку</a>
 </div>
 
 @section Scripts {
