@@ -1,0 +1,66 @@
+﻿@page
+@model MarkPeople.Pages.Peoples.IndexModel
+
+@{
+    ViewData["Title"] = "Cписок людей";
+}
+
+<h1>Cписок людей</h1>
+
+<p>
+    <a asp-page="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Имя
+            </th>
+            <th>
+                Фамилия
+            </th>
+            <th>
+                Возраст
+            </th>
+            <th>
+                Вес
+            </th>
+            <th>
+                День рождения
+            </th>
+            <th>
+                Страна
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.People) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeopleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeopleSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeopleAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeopleWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeopleBDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.NameCountry)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PeopleId">Редактировать</a> |
+                <a asp-page="./Details" asp-route-id="@item.PeopleId">Подробно</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PeopleId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

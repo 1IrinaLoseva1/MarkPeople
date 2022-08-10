@@ -1,0 +1,58 @@
+﻿@page
+@model MarkPeople.Pages.Peoples.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить эту запись?</h3>
+<div>
+    <h4>Список людей</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Имя
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.People.PeopleName)
+        </dd>
+        <dt class="col-sm-2">
+            Фамилия
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.People.PeopleSurname)
+        </dd>
+        <dt class="col-sm-2">
+            Возраст
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.People.PeopleAge)
+        </dd>
+        <dt class="col-sm-2">
+            Вес
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.People.PeopleWeight)
+        </dd>
+        <dt class="col-sm-2">
+            День рождения
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.People.PeopleBDay)
+        </dd>
+        <dt class="col-sm-2">
+            Страна
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.People.Country.NameCountry)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="People.PeopleId" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад к списку</a>
+    </form>
+</div>

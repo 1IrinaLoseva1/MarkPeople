@@ -1,0 +1,53 @@
+﻿@page
+@model MarkPeople.Pages.Marks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MarkQuality</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MarkQuality.PeopleId" class="control-label"></label>
+                <select asp-for="MarkQuality.PeopleId" class ="form-control" asp-items="ViewBag.PeopleId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MarkQuality.Beauty" class="control-label"></label>
+                <input asp-for="MarkQuality.Beauty" class="form-control" />
+                <span asp-validation-for="MarkQuality.Beauty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MarkQuality.Power" class="control-label"></label>
+                <input asp-for="MarkQuality.Power" class="form-control" />
+                <span asp-validation-for="MarkQuality.Power" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MarkQuality.Mind" class="control-label"></label>
+                <input asp-for="MarkQuality.Mind" class="form-control" />
+                <span asp-validation-for="MarkQuality.Mind" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="MarkQuality.IsLikePizzaPineApple" /> @Html.DisplayNameFor(model => model.MarkQuality.IsLikePizzaPineApple)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

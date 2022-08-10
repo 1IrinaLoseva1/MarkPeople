@@ -1,0 +1,60 @@
+﻿@page
+@model MarkPeople.Pages.Marks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkQuality[0].People)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkQuality[0].Beauty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkQuality[0].Power)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkQuality[0].Mind)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkQuality[0].IsLikePizzaPineApple)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MarkQuality) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.People.PeopleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beauty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Power)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mind)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsLikePizzaPineApple)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.MarkQualityId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.MarkQualityId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.MarkQualityId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
